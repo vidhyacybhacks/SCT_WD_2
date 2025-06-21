@@ -1,45 +1,117 @@
+/* Base styling */
 body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #ffe0f0, #ffccff);
   font-family: 'Segoe UI', sans-serif;
-  background-color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #880e4f;
+}
+
+/* Title */
+h1 {
+  margin-top: 40px;
+  font-size: 2.8rem;
+  color: #d81b60;
+  text-shadow: 2px 2px 8px #ffc0cb;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Stopwatch Container */
+#stopwatch-container {
+  background: #fff0f5;
+  padding: 30px 40px;
+  border-radius: 30px;
+  box-shadow: 0 8px 20px rgba(255, 105, 180, 0.3);
   text-align: center;
-  padding: 50px;
+  margin: 20px;
+  animation: popIn 1s ease-in-out;
 }
 
-.stopwatch {
-  background: #fff;
-  border-radius: 10px;
-  padding: 30px;
-  display: inline-block;
-  box-shadow: 0 0 20px rgba(0,0,0,0.1);
-}
-
-#time {
-  font-size: 48px;
+/* Display */
+#display {
+  font-size: 3rem;
+  background: #ffe6f0;
+  padding: 20px 40px;
+  border-radius: 20px;
   margin-bottom: 20px;
+  border: 2px solid #f8bbd0;
+  color: #ad1457;
+  box-shadow: inset 0 0 5px #f48fb1;
 }
 
-.buttons button {
-  padding: 10px 20px;
-  margin: 5px;
-  font-size: 16px;
+/* Buttons */
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  background-color: #f06292;
+  color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 25px;
   cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(220, 20, 60, 0.3);
 }
 
-#startBtn { background-color: #4CAF50; color: white; }
-#pauseBtn { background-color: #FF9800; color: white; }
-#resetBtn { background-color: #f44336; color: white; }
-#lapBtn { background-color: #2196F3; color: white; }
+button:hover {
+  background-color: #ec407a;
+  transform: scale(1.05);
+}
 
-.laps {
-  text-align: left;
-  margin-top: 20px;
+/* Lap Times */
+#laps {
+  background-color: #fce4ec;
+  padding: 15px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(240, 98, 146, 0.3);
   max-height: 200px;
   overflow-y: auto;
 }
 
-.lap {
-  padding: 5px 0;
-  border-bottom: 1px solid #ccc;
+#laps h3 {
+  margin: 0 0 10px;
+  color: #ad1457;
+}
+
+#lapList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#lapList li {
+  padding: 8px 12px;
+  margin-bottom: 6px;
+  background: #f8bbd0;
+  border-radius: 10px;
+  color: #6a1b4d;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(255, 105, 180, 0.2);
+}
+
+/* Animations */
+@keyframes popIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
